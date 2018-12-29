@@ -5,6 +5,7 @@
 // import 'libp2p-webrtc-star';
 // import IPFS = require('ipfs');
 import IPFS = require('typestub-ipfs');
+import { IPFSGetResult } from 'typestub-ipfs';
 
 // browser start
 const ipfs = new IPFS({
@@ -45,8 +46,10 @@ let test = (async () => {
 
   let hash = files[0].hash;
   console.log('getting file...');
-  let res = await node.files.get(hash);
+  let res = (await node.files.get(hash)) as IPFSGetResult[];
   console.log('got file:', { res });
+  let content = res[0].content.toString();
+  console.log('file content: ' + content);
 
   console.log('closing node...');
   await new Promise((resolve, reject) => node.stop(() => resolve));
