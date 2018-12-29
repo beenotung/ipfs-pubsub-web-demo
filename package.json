@@ -1,6 +1,6 @@
 {
   "name": "p2p-web",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "author": {
@@ -12,6 +12,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
+    "start": "parcel src/index.html",
     "test": "npm run rawtest",
     "clean": "rm -rf dist",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -35,5 +36,9 @@
     "tslint": "^5.12.0",
     "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.2.2"
+  },
+  "dependencies": {
+    "async": "^2.6.1",
+    "typestub-ipfs": "^0.23.13"
   }
 }
